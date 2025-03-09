@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.gradient-overlay {
+  background: linear-gradient(to right, rgba(28, 28, 28, 0.95), rgba(46, 46, 46, 0.95));
+}
+
+.hover-effect {
+  transition: all 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: translateY(-2px);
+}
+
+.service-card {
+  transition: all 0.3s ease;
+  border: 1px solid rgba(200, 169, 97, 0.1);
+}
+
+.service-card:hover {
+  border-color: rgba(200, 169, 97, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
