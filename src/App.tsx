@@ -67,6 +67,14 @@ function App() {
     }
   ];
 
+  const handleMenuClick = (sectionId: string) => {
+    setIsMenuOpen(false);
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-matte font-montserrat text-ice">
       {/* Hero Section */}
@@ -79,63 +87,90 @@ function App() {
           
           {/* Mobile Menu Button */}
           <button 
-            className="md:hidden text-ice hover:text-gold transition-colors"
+            className="md:hidden text-ice hover:text-gold transition-colors p-2"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-12">
-            <a href="#home" className="text-sm tracking-wider hover:text-gold transition-colors">HOME</a>
-            <a href="#services" className="text-sm tracking-wider hover:text-gold transition-colors">SERVIÇOS</a>
-            <a href="#portfolio" className="text-sm tracking-wider hover:text-gold transition-colors">PORTFÓLIO</a>
-            <a href="#contact" className="text-sm tracking-wider hover:text-gold transition-colors">CONTATO</a>
+            <button onClick={() => handleMenuClick('home')} className="text-sm tracking-wider hover:text-gold transition-colors">HOME</button>
+            <button onClick={() => handleMenuClick('services')} className="text-sm tracking-wider hover:text-gold transition-colors">SERVIÇOS</button>
+            <button onClick={() => handleMenuClick('portfolio')} className="text-sm tracking-wider hover:text-gold transition-colors">PORTFÓLIO</button>
+            <button onClick={() => handleMenuClick('contact')} className="text-sm tracking-wider hover:text-gold transition-colors">CONTATO</button>
           </div>
 
-          {/* Mobile Menu */}
-          {isMenuOpen && (
-            <div className="absolute top-full left-0 right-0 bg-matte/95 backdrop-blur-sm py-6 px-6 md:hidden">
-              <div className="flex flex-col space-y-6">
-                <a 
-                  href="#home" 
-                  className="text-sm tracking-wider hover:text-gold transition-colors"
+          {/* Mobile Menu Overlay */}
+          <div className={`fixed inset-0 bg-black/90 backdrop-blur-sm z-50 transition-opacity duration-300 md:hidden ${isMenuOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}>
+            <div className="flex flex-col h-full">
+              {/* Mobile Menu Header */}
+              <div className="flex justify-between items-center px-6 py-6 border-b border-gold/20">
+                <div className="text-2xl font-light tracking-wider">João G. Eng<span className="text-gold">.</span></div>
+                <button 
                   onClick={() => setIsMenuOpen(false)}
+                  className="text-ice hover:text-gold transition-colors p-2"
+                  aria-label="Close menu"
+                >
+                  <X className="w-6 h-6" />
+                </button>
+              </div>
+
+              {/* Mobile Menu Items */}
+              <div className="flex flex-col items-center justify-center flex-grow space-y-8 px-6">
+                <button 
+                  onClick={() => handleMenuClick('home')}
+                  className="text-2xl font-light tracking-wider hover:text-gold transition-colors w-full text-center py-4"
                 >
                   HOME
-                </a>
-                <a 
-                  href="#services" 
-                  className="text-sm tracking-wider hover:text-gold transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                </button>
+                <button 
+                  onClick={() => handleMenuClick('services')}
+                  className="text-2xl font-light tracking-wider hover:text-gold transition-colors w-full text-center py-4"
                 >
                   SERVIÇOS
-                </a>
-                <a 
-                  href="#portfolio" 
-                  className="text-sm tracking-wider hover:text-gold transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                </button>
+                <button 
+                  onClick={() => handleMenuClick('portfolio')}
+                  className="text-2xl font-light tracking-wider hover:text-gold transition-colors w-full text-center py-4"
                 >
                   PORTFÓLIO
-                </a>
-                <a 
-                  href="#contact" 
-                  className="text-sm tracking-wider hover:text-gold transition-colors"
-                  onClick={() => setIsMenuOpen(false)}
+                </button>
+                <button 
+                  onClick={() => handleMenuClick('contact')}
+                  className="text-2xl font-light tracking-wider hover:text-gold transition-colors w-full text-center py-4"
                 >
                   CONTATO
-                </a>
+                </button>
+              </div>
+
+              {/* Mobile Menu Footer */}
+              <div className="px-6 py-8 border-t border-gold/20">
+                <div className="flex flex-col space-y-4">
+                  <a href="tel:+5535997658926" className="flex items-center space-x-4 text-ice hover:text-gold transition-colors">
+                    <Phone className="w-5 h-5" />
+                    <span>(35) 99765-8926</span>
+                  </a>
+                  <a href="mailto:jgnazare@hotmail.com" className="flex items-center space-x-4 text-ice hover:text-gold transition-colors">
+                    <Mail className="w-5 h-5" />
+                    <span>jgnazare@hotmail.com</span>
+                  </a>
+                </div>
               </div>
             </div>
-          )}
+          </div>
         </nav>
         
         <div className="relative container mx-auto px-6 py-32 md:py-48">
           <h1 className="text-4xl md:text-6xl font-light mb-6 tracking-wider">Engenharia Civil<br/>de Excelência</h1>
           <p className="text-lg mb-12 max-w-xl opacity-90">Soluções técnicas precisas e confiáveis para seu projeto</p>
-          <a href="#contact" className="inline-block px-12 py-4 border border-gold text-gold hover:bg-gold hover:text-matte transition-colors tracking-wider">
+          <button 
+            onClick={() => handleMenuClick('contact')}
+            className="inline-block px-12 py-4 border border-gold text-gold hover:bg-gold hover:text-matte transition-colors tracking-wider"
+          >
             SOLICITAR ORÇAMENTO
-          </a>
+          </button>
         </div>
       </header>
 

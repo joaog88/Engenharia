@@ -6,6 +6,7 @@
 
 body {
   font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
 }
 
 .gradient-overlay {
@@ -28,4 +29,9 @@ body {
 .service-card:hover {
   border-color: rgba(200, 169, 97, 0.3);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Prevent body scroll when mobile menu is open */
+body.menu-open {
+  overflow: hidden;
 }

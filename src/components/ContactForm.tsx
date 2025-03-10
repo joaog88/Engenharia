@@ -81,11 +81,10 @@ const ContactForm = () => {
           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
         >
           <option value="">Selecione um serviço</option>
-          <option value="Laudos Técnicos">Laudos Técnicos</option>
-          <option value="Projetos AutoCAD">Projetos AutoCAD</option>
-          <option value="Especificações Técnicas">Especificações Técnicas e Planilhas Orçamentárias</option>
-          <option value="Cálculo Estrutural">Cálculo Estrutural</option>
-          <option value="Cálculo Estrutural">Orçamento completo</option>
+          <option value="Laudo Técnico">Laudo Técnico</option>
+          <option value="Projeto em AutoCad ou Revit">Projeto em AutoCad ou Revit</option>
+          <option value="Projeto e Cálculo Estrutural">Projeto e Cálculo Estrutural</option>
+          <option value="Projeto e Orçamento Completo">Projeto e Orçamento Completo</option>
         </select>
       </div>
 
