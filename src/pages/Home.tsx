@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 const kitnetProjects = [
   {
     title: 'Kitnet 10 Unidades',
-    terrainSize: '20x20m (400m²)',
+    terrainSize: '20x30m (600m²)',
     floors: 2,
     price: 800,
     image: 'https://images.unsplash.com/photo-1580041065738-e72023775cdc?auto=format&fit=crop&w=1400&q=80',
-    description: 'Projeto para 10 unidades em 400m², com 2 pavimentos. Layout otimizado para máxima rentabilidade.'
+    description: 'Projeto para 10 unidades em 600m², com 2 pavimentos. Layout otimizado para máxima rentabilidade.',
+    route: '/project-10-units'
   },
   {
     title: 'Kitnet 12 Unidades',
@@ -17,19 +19,22 @@ const kitnetProjects = [
     floors: 2,
     price: 800,
     image: 'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1400&q=80',
-    description: 'Projeto para 12 unidades em 800m², com 2 pavimentos. Equilíbrio perfeito entre custo e espaço.'
+    description: 'Projeto para 12 unidades em 800m², com 2 pavimentos. Equilíbrio perfeito entre custo e espaço.',
+    route: '/project-12-units'
   },
   {
     title: 'Kitnet 15 Unidades',
-    terrainSize: '20x60m (1200m²)',
+    terrainSize: '20x50m (1000m²)',
     floors: 2,
     price: 800,
     image: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=1400&q=80',
-    description: 'Projeto para 15 unidades em 1200m², com 2 pavimentos. Design eficiente para alta lucratividade.'
+    description: 'Projeto para 15 unidades em 1000m², com 2 pavimentos. Design eficiente para alta lucratividade.',
+    route: '/project-15-units'
   }
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
   const [contactForm, setContactForm] = useState({ name: '', phone: '' });
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -72,7 +77,10 @@ const Home = () => {
                   <p className="text-sm opacity-75 mb-6">{project.description}</p>
                   <div className="flex justify-between items-center">
                     <span className="text-gold text-2xl">R$ {project.price},00</span>
-                    <button className="px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-black transition-colors">
+                    <button 
+                      onClick={() => navigate(project.route)}
+                      className="px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-black transition-colors"
+                    >
                       Ver Detalhes
                     </button>
                   </div>
@@ -108,7 +116,10 @@ const Home = () => {
                       <p className="text-sm opacity-75 mb-6">{project.description}</p>
                       <div className="flex justify-between items-center">
                         <span className="text-gold text-2xl">R$ {project.price},00</span>
-                        <button className="px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-black transition-colors">
+                        <button 
+                          onClick={() => navigate(project.route)}
+                          className="px-6 py-2 border border-gold text-gold hover:bg-gold hover:text-black transition-colors"
+                        >
                           Ver Detalhes
                         </button>
                       </div>
@@ -120,13 +131,13 @@ const Home = () => {
           </div>
 
           {/* Custom Project Card */}
-          <div className="bg-black/80 backdrop-blur-sm rounded-lg overflow-hidden mt-12">
-            <div className="container mx-auto px-6 py-12 md:py-20">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="bg-black/80 backdrop-blur-sm rounded-lg overflow-hidden mt-12 max-w-3xl mx-auto">
+            <div className="container mx-auto px-6 py-12">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                   <h3 className="text-2xl font-light mb-6">Projeto Personalizado</h3>
                   <p className="text-lg mb-8 opacity-75">
-                    Desenvolvemos seu projeto do zero, com até 20 unidades e 3 pavimentos.
+                    Desenvolvemos seu projeto do zero, com até 25 unidades e 4 pavimentos.
                   </p>
                   <ul className="space-y-4 mb-8">
                     <li className="flex items-center">
@@ -135,23 +146,26 @@ const Home = () => {
                     </li>
                     <li className="flex items-center">
                       <span className="text-gold mr-2">•</span>
-                      <span>Até 20 unidades</span>
+                      <span>Até 25 unidades</span>
                     </li>
                     <li className="flex items-center">
                       <span className="text-gold mr-2">•</span>
-                      <span>Máximo de 3 pavimentos</span>
+                      <span>Máximo de 4 pavimentos</span>
                     </li>
                   </ul>
                   <div className="flex items-center justify-between">
                     <span className="text-gold text-3xl">R$ 1.000,00</span>
-                    <button className="px-8 py-3 bg-gold text-black hover:bg-opacity-90 transition-colors">
+                    <button 
+                      onClick={() => navigate('/custom-project')}
+                      className="px-8 py-3 bg-gold text-black hover:bg-opacity-90 transition-colors"
+                    >
                       Ver Detalhes
                     </button>
                   </div>
                 </div>
-                <div className="relative h-96">
+                <div className="relative h-64">
                   <img 
-                    src="https://images.unsplash.com/photo-1481026469463-66327c86e544?auto=format&fit=crop&w=1400&q=80"
+                    src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80"
                     alt="Projeto Personalizado"
                     className="w-full h-full object-cover rounded-lg"
                   />
@@ -164,40 +178,36 @@ const Home = () => {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-black/80 backdrop-blur-sm">
+      <section className="py-16 bg-black/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <div className="max-w-md mx-auto">
-            <h2 className="text-3xl font-light text-center mb-12">Fale Conosco</h2>
-            <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="max-w-sm mx-auto">
+            <h2 className="text-2xl font-light text-center mb-8">Fale Conosco</h2>
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
-                  Nome
-                </label>
                 <input
                   type="text"
                   id="name"
+                  placeholder="Nome"
                   required
-                  className="w-full px-4 py-3 bg-[#1A1A1A] border border-gold/20 rounded-lg focus:border-gold focus:outline-none"
+                  className="w-full px-4 py-3 bg-[#1A1A1A] border border-gold/20 rounded-lg focus:border-gold focus:outline-none text-ice"
                   value={contactForm.name}
                   onChange={(e) => setContactForm({ ...contactForm, name: e.target.value })}
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="block text-sm font-medium mb-2">
-                  Telefone
-                </label>
                 <input
                   type="tel"
                   id="phone"
+                  placeholder="Telefone"
                   required
-                  className="w-full px-4 py-3 bg-[#1A1A1A] border border-gold/20 rounded-lg focus:border-gold focus:outline-none"
+                  className="w-full px-4 py-3 bg-[#1A1A1A] border border-gold/20 rounded-lg focus:border-gold focus:outline-none text-ice"
                   value={contactForm.phone}
                   onChange={(e) => setContactForm({ ...contactForm, phone: e.target.value })}
                 />
               </div>
               <button
                 type="submit"
-                className="w-full py-4 bg-gold text-black font-medium rounded-lg hover:bg-opacity-90 transition-colors tracking-wider"
+                className="w-full py-3 bg-gold text-black font-medium rounded-lg hover:bg-opacity-90 transition-colors tracking-wider"
               >
                 ENVIAR MENSAGEM
               </button>

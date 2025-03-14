@@ -29,7 +29,7 @@ const Navigation = () => {
 
           <div className="hidden md:flex space-x-12">
             <Link to="/" className="text-sm tracking-wider hover:text-gold transition-colors">HOME</Link>
-            <Link to="/services" className="text-sm tracking-wider hover:text-gold transition-colors">SERVIÇOS</Link>
+            <Link to="/portfolio" className="text-sm tracking-wider hover:text-gold transition-colors">PORTIFÓLIO</Link>
           </div>
         </div>
 
@@ -44,10 +44,10 @@ const Navigation = () => {
                 HOME
               </Link>
               <Link 
-                to="/services" 
+                to="/portfolio" 
                 className="block text-sm tracking-wider hover:text-gold transition-colors py-2"
               >
-                SERVIÇOS
+                PORTIFÓLIO
               </Link>
             </div>
           </div>
