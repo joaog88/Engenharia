@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
+import 'swiper/css/navigation'; // Importe os estilos de navegação
+import { Navigation } from 'swiper/modules'; // Importe o módulo de navegação
 
 const kitnetProjects = [
   {
@@ -90,11 +92,20 @@ const Home = () => {
           </div>
 
           {/* Mobile Carousel */}
-          <div className="md:hidden mb-12">
+          <div className="md:hidden mb-12 relative">
             <Swiper
               spaceBetween={20}
               slidesPerView={1}
-              pagination={{ clickable: true }}
+              modules={[Navigation]} // Adicione o módulo de navegação
+              navigation={{
+                prevEl: '.custom-swiper-button-prev',
+                nextEl: '.custom-swiper-button-next',
+              }}
+              onBeforeInit={(swiper) => {
+                swiper.params.navigation.prevEl = '.custom-swiper-button-prev';
+                swiper.params.navigation.nextEl = '.custom-swiper-button-next';
+              }}
+              className="swiper-container"
             >
               {kitnetProjects.map((project, index) => (
                 <SwiperSlide key={index}>
@@ -128,12 +139,31 @@ const Home = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
+            {/* Setas Personalizadas */}
+            <div className="custom-swiper-button-prev absolute top-1/2 left-4 transform -translate-y-1/2 z-10 cursor-pointer w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </div>
+            <div className="custom-swiper-button-next absolute top-1/2 right-4 transform -translate-y-1/2 z-10 cursor-pointer w-12 h-12 bg-gray-700 rounded-full flex items-center justify-center">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </div>
 
           {/* Custom Project Card */}
           <div className="bg-black/80 backdrop-blur-sm rounded-lg overflow-hidden mt-12 max-w-3xl mx-auto">
             <div className="container mx-auto px-6 py-12">
               <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="relative h-64">
+                  <img 
+                    src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80"
+                    alt="Projeto Personalizado"
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                  <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
+                </div>
                 <div>
                   <h3 className="text-2xl font-light mb-6">Projeto Personalizado</h3>
                   <p className="text-lg mb-8 opacity-75">
@@ -163,14 +193,6 @@ const Home = () => {
                     </button>
                   </div>
                 </div>
-                <div className="relative h-64">
-                  <img 
-                    src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1400&q=80"
-                    alt="Projeto Personalizado"
-                    className="w-full h-full object-cover rounded-lg"
-                  />
-                  <div className="absolute inset-0 bg-black/40 rounded-lg"></div>
-                </div>
               </div>
             </div>
           </div>
@@ -180,7 +202,7 @@ const Home = () => {
       {/* Contact Section */}
       <section className="py-16 bg-black/80 backdrop-blur-sm">
         <div className="container mx-auto px-6">
-          <div className="max-w-sm mx-auto">
+        <div className="max-w-sm mx-auto">
             <h2 className="text-2xl font-light text-center mb-8">Fale Conosco</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
@@ -215,8 +237,14 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <footer className="bg-matte py-8">
+        <div className="container mx-auto px-6 text-center text-sm opacity-50">
+          <p>&copy; 2025 João G. Eng. Todos os direitos reservados.</p>
+        </div>
+      </footer>
     </div>
   );
 };
 
 export default Home;
+          
