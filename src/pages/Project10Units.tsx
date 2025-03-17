@@ -81,6 +81,16 @@ const Project10Units = () => {
             </div>
           </div>
         </div>
+
+        {/* Floor Plan Section */}
+        <div className="mt-16">
+          <h2 className="text-2xl font-light mb-8 text-center">Planta Baixa</h2>
+          <img
+            src="/floorplan.jpg"
+            alt="Planta Baixa do Projeto"
+            className="w-full max-w-[1200px] mx-auto rounded-lg shadow-lg"
+          />
+        </div>
       </div>
       <WhatsAppButton />
     </div>
