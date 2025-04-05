@@ -88,7 +88,7 @@ const CustomProject = () => {
         <div className="mt-16">
           <h2 className="text-2xl font-light mb-8 text-center">Planta Baixa</h2>
           <img
-            src="/floorplan.jpg"
+            src="https://i.imgur.com/ubnt5lg.jpg"
             alt="Planta Baixa do Projeto"
             className="w-full max-w-[1200px] mx-auto rounded-lg shadow-lg"
           />
