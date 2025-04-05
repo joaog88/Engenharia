@@ -84,9 +84,9 @@ const Project15Units = () => {
 
         {/* Floor Plan Section */}
         <div className="mt-16">
-          <h2 className="text-2xl font-light mb-8 text-center">Planta Baixa</h2>
+          <h2 className="text-2xl font-light mb-8 text-center text-ice">Planta Baixa</h2>
           <img
-            src="https://imgur.com/a/ubnt5lg"
+            src="https://i.imgur.com/eauWWGm.jpg"
             alt="Planta Baixa do Projeto"
             className="w-full max-w-[1200px] mx-auto rounded-lg shadow-lg"
           />
