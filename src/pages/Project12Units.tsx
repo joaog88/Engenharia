@@ -17,27 +17,34 @@ const Project12Units = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h1 className="text-4xl font-light mb-6">Kitnet 12 Unidades</h1>
-            <div className="space-y-6">
+            <h1 className="text-4xl font-light mb-6">Kitnet com 12 Unidades</h1>
+            <div className="space-y-6 text-ice/90">
+              <p>
+                Projeto arquitetônico desenvolvido para empreendimentos enxutos com excelente potencial de rentabilidade.
+              </p>
+
               <div>
-                <h2 className="text-xl text-gold mb-3">Detalhes do Projeto</h2>
+                <h2 className="text-xl text-gold mb-3">Descrição do Projeto</h2>
+                <p className="mb-4">
+                  Pensado para terrenos de 20x40m (800m²), este projeto contempla dois pavimentos com doze unidades independentes de 28m² cada.
+                  Ideal para locação de curta ou longa duração, une praticidade, baixo custo construtivo e otimização do espaço.
+                </p>
                 <ul className="space-y-2 text-ice/80">
-                  <li>• Terreno: 20x40m (800m²)</li>
-                  <li>• 2 Pavimentos</li>
-                  <li>• 12 Unidades independentes</li>
-                  <li>• Área útil por unidade: 28m²</li>
+                  <li>Terreno: 20x40m (800m²)</li>
+                  <li>2 Pavimentos</li>
+                  <li>12 Unidades independentes</li>
+                  <li>Área útil por unidade: 28m²</li>
                 </ul>
               </div>
 
               <div>
-                <h2 className="text-xl text-gold mb-3">Incluso no Projeto</h2>
+                <h2 className="text-xl text-gold mb-3">Você receberá</h2>
                 <ul className="space-y-2 text-ice/80">
-                  <li>• Projeto Arquitetônico Completo</li>
-                  <li>• Projeto Estrutural</li>
-                  <li>• Projeto Hidráulico</li>
-                  <li>• Projeto Elétrico</li>
-                  <li>• Memorial Descritivo</li>
-                  <li>• ART (Anotação de Responsabilidade Técnica)</li>
+                  <li>Planta baixa em CAD (.dwg)</li>
+                  <li>Modelo 3D ilustrativo da edificação</li>
+                  <li>Layout funcional e otimizado para construção</li>
+                  <li>Memorial descritivo</li>
+                  <li>ART (Anotação de Responsabilidade Técnica)</li>
                 </ul>
               </div>
 
@@ -70,19 +77,18 @@ const Project12Units = () => {
             <div className="grid grid-cols-2 gap-4">
               <img
                 src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=800&q=80"
-                alt="Detalhes do Projeto"
+                alt="Render Interno"
                 className="w-full h-48 object-cover rounded-lg"
               />
               <img
                 src="https://images.unsplash.com/photo-1580041065738-e72023775cdc?auto=format&fit=crop&w=800&q=80"
-                alt="Detalhes do Projeto"
+                alt="Render Interno"
                 className="w-full h-48 object-cover rounded-lg"
               />
             </div>
           </div>
         </div>
 
-        {/* Floor Plan Section */}
         <div className="mt-16">
           <h2 className="text-2xl font-light mb-8 text-center text-ice">Planta Baixa</h2>
           <img
