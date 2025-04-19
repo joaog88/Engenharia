@@ -54,7 +54,7 @@ const CustomProject = () => {
                   const message = encodeURIComponent(
                     'Olá! Gostaria de saber mais sobre o projeto personalizado de kitnets.'
                   );
-                  window.open(`https://wa.me/5535997658926?text=${message}`, '_blank');
+                  window.open(`https://wa.me/5535997069355?text=${message}`, '_blank');
                 }}
                 className="w-full py-4 bg-gold text-black font-medium rounded-lg hover:bg-opacity-90 transition-colors tracking-wider"
               >
@@ -88,7 +88,7 @@ const CustomProject = () => {
         <div className="mt-16">
           <h2 className="text-2xl font-light mb-8 text-center text-ice">Planta Baixa</h2>
           <img
-            src="https://i.imgur.com/eauWWGm.jpg"
+            src="/floorplan.jpg"
             alt="Planta Baixa do Projeto"
             className="w-full max-w-[1200px] mx-auto rounded-lg shadow-lg"
           />

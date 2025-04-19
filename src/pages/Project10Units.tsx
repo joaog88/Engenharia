@@ -17,35 +17,27 @@ const Project10Units = () => {
 
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <h1 className="text-4xl font-light mb-6">Kitnet com 10 Unidades</h1>
-            <div className="space-y-6 text-ice/90">
-              <p>
-                Projeto arquitetônico ideal para quem deseja investir em empreendimentos compactos e de alta rentabilidade.
-              </p>
-
+            <h1 className="text-4xl font-light mb-6">Kitnet 10 Unidades</h1>
+            <div className="space-y-6">
               <div>
-                <h2 className="text-xl text-gold mb-3">Descrição do Projeto</h2>
-                <p className="mb-4">
-                  Este modelo foi desenvolvido para terrenos de 20x30m (600m²), com dois pavimentos e dez unidades independentes,
-                  cada uma com 25m² de área útil. A planta foi pensada para otimizar espaço, reduzir custos de execução e atender à demanda
-                  crescente por moradias funcionais e acessíveis.
-                </p>
+                <h2 className="text-xl text-gold mb-3">Detalhes do Projeto</h2>
                 <ul className="space-y-2 text-ice/80">
-                  <li>Terreno: 20x30m (600m²)</li>
-                  <li>2 Pavimentos</li>
-                  <li>10 Unidades independentes</li>
-                  <li>Área útil por unidade: 25m²</li>
+                  <li>• Terreno: 20x30m (600m²)</li>
+                  <li>• 2 Pavimentos</li>
+                  <li>• 10 Unidades independentes</li>
+                  <li>• Área útil por unidade: 25m²</li>
                 </ul>
               </div>
 
               <div>
-                <h2 className="text-xl text-gold mb-3">Você receberá</h2>
+                <h2 className="text-xl text-gold mb-3">Incluso no Projeto</h2>
                 <ul className="space-y-2 text-ice/80">
-                  <li>Planta baixa em CAD (.dwg)</li>
-                  <li>Modelo 3D ilustrativo da edificação</li>
-                  <li>Layout funcional e otimizado para construção</li>
-                  <li>Memorial descritivo</li>
-                  <li>ART (Anotação de Responsabilidade Técnica)</li>
+                  <li>• Projeto Arquitetônico Completo</li>
+                  <li>• Projeto Estrutural</li>
+                  <li>• Projeto Hidráulico</li>
+                  <li>• Projeto Elétrico</li>
+                  <li>• Memorial Descritivo</li>
+                  <li>• ART (Anotação de Responsabilidade Técnica)</li>
                 </ul>
               </div>
 
@@ -60,7 +52,7 @@ const Project10Units = () => {
                   const message = encodeURIComponent(
                     'Olá! Gostaria de saber mais sobre o projeto de 10 unidades de kitnets.'
                   );
-                  window.open(`https://wa.me/5535997658926?text=${message}`, '_blank');
+                  window.open(`https://wa.me/5535997069355?text=${message}`, '_blank');
                 }}
                 className="w-full py-4 bg-gold text-black font-medium rounded-lg hover:bg-opacity-90 transition-colors tracking-wider"
               >
@@ -78,22 +70,23 @@ const Project10Units = () => {
             <div className="grid grid-cols-2 gap-4">
               <img
                 src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&w=800&q=80"
-                alt="Render Interno"
+                alt="Detalhes do Projeto"
                 className="w-full h-48 object-cover rounded-lg"
               />
               <img
                 src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
-                alt="Render Interno"
+                alt="Detalhes do Projeto"
                 className="w-full h-48 object-cover rounded-lg"
               />
             </div>
           </div>
         </div>
 
+        {/* Floor Plan Section */}
         <div className="mt-16">
           <h2 className="text-2xl font-light mb-8 text-center text-ice">Planta Baixa</h2>
           <img
-            src="https://i.imgur.com/eauWWGm.jpg"
+            src="/floorplan.jpg"
             alt="Planta Baixa do Projeto"
             className="w-full max-w-[1200px] mx-auto rounded-lg shadow-lg"
           />

@@ -145,7 +145,7 @@ function Portfolio() {
               <div className="space-y-8">
                 <div className="flex items-center">
                   <Phone className="w-5 h-5 text-gold mr-6" />
-                  <span>(35) 99765-8926</span>
+                  <span>(35) 99706-9355</span>
                 </div>
                 <div className="flex items-center">
                   <Mail className="w-5 h-5 text-gold mr-6" />

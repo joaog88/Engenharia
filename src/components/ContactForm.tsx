@@ -23,7 +23,7 @@ const ContactForm = () => {
     );
 
     // Open WhatsApp with the formatted message
-    window.open(`https://wa.me/5535997658926?text=${whatsappMessage}`, '_blank');
+    window.open(`https://wa.me/5535997069355?text=${whatsappMessage}`, '_blank');
   };
 
   return (
