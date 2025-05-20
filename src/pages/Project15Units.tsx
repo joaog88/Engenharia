@@ -32,12 +32,12 @@ const Project15Units = () => {
               <div>
                 <h2 className="text-xl text-gold mb-3">Incluso no Projeto</h2>
                 <ul className="space-y-2 text-ice/80">
-                  <li>• Projeto Arquitetônico Completo</li>
-                  <li>• Projeto Estrutural</li>
-                  <li>• Projeto Hidráulico</li>
-                  <li>• Projeto Elétrico</li>
-                  <li>• Memorial Descritivo</li>
-                  <li>• ART (Anotação de Responsabilidade Técnica)</li>
+                  <li>• Plantas baixas com todas medidas</li>
+                  <li>• Planta de cobertura</li>
+                  <li>• 2 cortes</li>
+                  <li>• Fachada</li>
+                  <li>• Planta humanizada</li>
+                  <li>• Um vídeo realista de apresentação (maquete 3D)</li>
                 </ul>
               </div>
 
